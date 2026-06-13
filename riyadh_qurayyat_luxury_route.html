@@ -1,122 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>مسار الرحلة من منفذ سلوى إلى القريات</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --maroon:#7A1020; --maroon2:#4b0712; --gold:#d8b15a; --gold2:#fff1bc;
-      --navy:#06162f; --blue:#102a56; --white:#fff; --muted:#d9e1ef; --glass:rgba(255,255,255,.12);
-      --success:#0ec48b; --warning:#ffca3a; --fuel:#20d6ff;
-    }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:'Tajawal',system-ui,sans-serif;background:
-      radial-gradient(circle at 10% 10%,rgba(216,177,90,.22),transparent 28%),
-      radial-gradient(circle at 90% 25%,rgba(122,16,32,.35),transparent 30%),
-      linear-gradient(135deg,#06162f 0%,#071a38 45%,#2d0711 100%);color:var(--white);min-height:100vh;}
-    body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;pointer-events:none;mask-image:linear-gradient(to bottom,#000,transparent 85%)}
-    .wrap{width:min(1160px,94vw);margin:auto;position:relative;z-index:1}.hero{padding:42px 0 24px;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center}.badge{display:inline-flex;gap:10px;align-items:center;padding:10px 16px;border:1px solid rgba(216,177,90,.45);background:rgba(216,177,90,.12);border-radius:999px;color:var(--gold2);font-weight:800}.title{font-size:clamp(32px,5vw,66px);line-height:1.08;margin:18px 0 12px;font-weight:900;letter-spacing:-1.5px}.title span{color:var(--gold2)}.lead{font-size:clamp(17px,2.2vw,23px);color:#e8edf8;line-height:1.8;margin:0 0 22px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{border:0;border-radius:16px;padding:13px 18px;font-weight:900;text-decoration:none;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:9px;font-family:inherit}.btn.primary{background:linear-gradient(135deg,var(--gold),#fff1bc);color:#311d03}.btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.18)}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-    .panel{background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.07));border:1px solid rgba(255,255,255,.18);border-radius:30px;box-shadow:0 24px 70px rgba(0,0,0,.35);backdrop-filter:blur(14px)}.stats{padding:22px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.stat{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:18px}.stat b{font-size:30px;color:var(--gold2);display:block}.stat small{color:var(--muted);font-weight:700}.meter{height:10px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;margin-top:10px}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--success));transition:1s}
-    .section-title{font-size:30px;margin:28px 0 14px;font-weight:900}.route{position:relative;margin:20px 0 40px}.route:before{content:"";position:absolute;right:30px;top:10px;bottom:10px;width:4px;border-radius:99px;background:linear-gradient(var(--gold),var(--maroon),var(--gold));opacity:.85}.card{position:relative;margin:0 72px 18px 0;padding:20px;border-radius:26px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);box-shadow:0 14px 40px rgba(0,0,0,.22);overflow:hidden}.card:before{content:attr(data-num);position:absolute;right:-61px;top:20px;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#fff4c8);color:#3a2306;display:grid;place-items:center;font-weight:900;box-shadow:0 0 0 8px rgba(216,177,90,.13)}.card.long{border-color:rgba(255,202,58,.45);background:linear-gradient(145deg,rgba(255,202,58,.16),rgba(255,255,255,.08))}.card h3{margin:0 0 10px;font-size:22px}.meta{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}.chip{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);font-weight:800;color:#f4f7ff}.chip.gold{background:rgba(216,177,90,.17);color:var(--gold2)}.note{margin:10px 0 0;color:#fff4c8;font-weight:700;line-height:1.6}.card .btn{margin-top:10px;padding:11px 14px;border-radius:14px}.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 46px}.tool{padding:18px;border-radius:24px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14)}.tool h4{margin:0 0 8px;color:var(--gold2);font-size:19px}.tool p{margin:0;color:#eaf0fb;line-height:1.65}.footer{margin:24px 0 35px;text-align:center;color:#cfd8ec;font-weight:700}.topBtn{position:fixed;left:18px;bottom:18px;background:var(--gold);color:#271600;border:0;border-radius:50%;width:50px;height:50px;font-size:22px;font-weight:900;box-shadow:0 12px 30px rgba(0,0,0,.35);cursor:pointer;z-index:9}
-    .fuel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0 36px}.fuel-card{position:relative;padding:18px 18px 18px;border-radius:24px;background:linear-gradient(145deg,rgba(32,214,255,.14),rgba(255,255,255,.08));border:1px solid rgba(32,214,255,.25);box-shadow:0 14px 36px rgba(0,0,0,.2)}.fuel-card.critical{background:linear-gradient(145deg,rgba(255,202,58,.18),rgba(255,255,255,.08));border-color:rgba(255,202,58,.45)}.fuel-card h3{margin:0 0 8px;color:#f7fbff;font-size:20px}.fuel-card p{margin:0;color:#e8f1ff;line-height:1.65;font-weight:700}.fuel-badge{display:inline-flex;margin-bottom:10px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);font-weight:900;color:var(--gold2)}.fuel-list{display:grid;gap:10px;margin-top:12px}.fuel-row{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.1)}.fuel-row strong{color:#fff}.fuel-row span{color:#dfe9ff;font-weight:800}.fuel-actions{margin-top:12px;display:flex;gap:9px;flex-wrap:wrap}.btn.fuel{background:linear-gradient(135deg,#9df3ff,#eaffff);color:#052535}.btn.warn{background:linear-gradient(135deg,var(--warning),#fff0a8);color:#382500}
-    @media(max-width:850px){.hero{grid-template-columns:1fr}.stats,.tools,.fuel-grid{grid-template-columns:1fr}.route:before{right:22px}.card{margin-right:58px}.card:before{right:-52px}.actions .btn{width:100%;justify-content:center}.title{letter-spacing:0}}
-    @media print{body{background:white;color:#111}.hero{display:block}.panel,.card,.tool{background:white;color:#111;border:1px solid #ddd;box-shadow:none}.btn,.topBtn{display:none}.route:before{background:#999}.card:before{background:#eee}.lead,.tool p,.note,.footer{color:#222}}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>دليل السفر الفاخر | قطر - الرياض - حائل - القريات</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#7a1230;--maroon2:#4b071b;--gold:#d7ad47;--gold2:#fff1b8;--navy:#071729;--ink:#102033;--muted:#667085;--card:rgba(255,255,255,.9);--glass:rgba(255,255,255,.13);--green:#16835f;--red:#b42318;--shadow:0 22px 70px rgba(0,0,0,.22);--radius:28px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Cairo,system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 0%,#fff5cf 0 15%,transparent 42%),radial-gradient(circle at 90% 10%,#b98425 0 12%,transparent 35%),linear-gradient(135deg,#fffaf0,#eef5ff 48%,#f9f1df);min-height:100vh;overflow-x:hidden}.desert{position:fixed;inset:auto 0 0;height:42vh;z-index:-1;background:linear-gradient(180deg,transparent,#d9a85133),radial-gradient(120% 80% at 50% 100%,#c48b37 0 22%,#ae7a36 22% 38%,transparent 39%);opacity:.45}.wrap{max-width:1220px;margin:auto;padding:18px}.hero{position:relative;overflow:hidden;border-radius:34px;padding:38px 24px;color:white;background:linear-gradient(135deg,rgba(75,7,27,.96),rgba(7,23,41,.96)),url('');box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.18)}.hero:before{content:"";position:absolute;inset:-80px;background:radial-gradient(circle at 20% 20%,rgba(215,173,71,.35),transparent 28%),radial-gradient(circle at 85% 45%,rgba(255,255,255,.14),transparent 24%);animation:float 9s ease-in-out infinite alternate}@keyframes float{to{transform:translateY(18px) scale(1.03)}}.hero>*{position:relative}.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:8px 14px;border-radius:999px;color:#fff7d5;font-weight:800}.title{font-size:clamp(30px,5vw,64px);margin:16px 0 6px;font-weight:900;line-height:1.15}.subtitle{font-size:clamp(16px,2.2vw,24px);color:#fff3cd;margin:0 0 22px}.heroGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:var(--glass);border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:14px}.stat b{display:block;font-size:25px;color:var(--gold2)}.nav{position:sticky;top:8px;z-index:10;display:flex;gap:9px;overflow:auto;margin:18px 0;padding:10px;background:rgba(255,255,255,.75);backdrop-filter:blur(18px);border:1px solid rgba(122,18,48,.13);border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.08)}.nav a,.btn{white-space:nowrap;text-decoration:none;border:none;cursor:pointer;font-family:inherit;font-weight:900;border-radius:999px;padding:11px 16px;background:#fff;color:var(--maroon);box-shadow:0 4px 14px rgba(0,0,0,.08)}.nav a:hover,.btn:hover{transform:translateY(-1px);background:var(--maroon);color:white}.section{margin:22px 0}.head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 6px 12px}.head h2{margin:0;font-size:clamp(24px,3vw,38px);color:var(--maroon2)}.head p{margin:0;color:var(--muted);font-weight:700}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border:1px solid rgba(122,18,48,.1);border-radius:var(--radius);padding:20px;box-shadow:0 12px 40px rgba(7,23,41,.08);position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--maroon),var(--gold))}.dua{font-family:'Aref Ruqaa',serif;font-size:clamp(22px,3vw,34px);line-height:2.05;text-align:center;color:#28101a;background:linear-gradient(180deg,#fffdf6,#fff4d9);border:1px solid #ecd392}.copyRow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}.pill{display:inline-flex;align-items:center;gap:7px;background:#fff7df;color:#6b3f00;border:1px solid #ebcc78;border-radius:999px;padding:8px 12px;font-weight:900}.timeline{position:relative}.stop{display:grid;grid-template-columns:75px 1fr auto;gap:14px;align-items:center;background:#fff;border:1px solid rgba(7,23,41,.09);border-radius:24px;padding:14px;margin:12px 0;box-shadow:0 8px 25px rgba(0,0,0,.06)}.num{width:56px;height:56px;border-radius:19px;display:grid;place-items:center;background:linear-gradient(135deg,var(--maroon),var(--gold));color:white;font-weight:900;font-size:22px}.stop h3{margin:0;color:var(--maroon2)}.stop p{margin:5px 0 0;color:#596579;font-weight:700}.map{background:var(--navy)!important;color:#fff!important}.warn{border-color:#f5c2c7;background:#fff5f5}.warn:before{background:linear-gradient(90deg,#b42318,#f97066)}.ok:before{background:linear-gradient(90deg,#16835f,#72d6b1)}.check{display:flex;align-items:center;gap:12px;padding:12px;border-radius:18px;background:#fff;margin:8px 0;border:1px solid #eceff3;font-weight:800}.check input{width:22px;height:22px;accent-color:var(--maroon)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tab{background:#fff;color:var(--maroon);border:1px solid #e6d1d8}.tab.active{background:linear-gradient(135deg,var(--maroon),var(--maroon2));color:white}.panel{display:none}.panel.active{display:block}.mini{font-size:13px;color:#667085}.footer{text-align:center;padding:24px;color:#667085;font-weight:700}.source a{color:var(--maroon);font-weight:900} @media(max-width:900px){.heroGrid,.grid{grid-template-columns:1fr}.stop{grid-template-columns:56px 1fr}.stop .btn{grid-column:1/-1;text-align:center}.title{font-size:34px}.wrap{padding:10px}}
+</style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div>
-        <div class="badge">🛣️ خطة سفر تفاعلية فاخرة</div>
-        <h1 class="title">مسار الرحلة من <span>منفذ سلوى</span> إلى <span>القريات</span></h1>
-        <p class="lead">خطة مراحل واضحة للتوقف والتزوّد بالوقود والراحة، مع روابط خرائط مباشرة لكل مرحلة، وتنبيه خاص للمنطقة الطويلة بين حائل والجوف.</p>
-        <div class="actions">
-          <a class="btn primary" href="#route">ابدأ عرض المسار</a>
-          <a class="btn ghost" href="#fuel">⛽ محطات الوقود</a>
-          <button class="btn ghost" onclick="window.print()">🖨️ طباعة الخطة</button>
-          <button class="btn ghost" onclick="toggleCompact()">✨ عرض مختصر</button>
-        </div>
-      </div>
-      <aside class="panel stats">
-        <div class="stat"><b id="km">0</b><small>كم تقريباً</small><div class="meter"><div class="fill" style="width:100%"></div></div></div>
-        <div class="stat"><b id="time">0</b><small>ساعة تقريباً</small><div class="meter"><div class="fill" style="width:92%"></div></div></div>
-        <div class="stat"><b>7</b><small>مراحل رئيسية</small><div class="meter"><div class="fill" style="width:78%"></div></div></div>
-        <div class="stat"><b>318</b><small>كم أطول مرحلة</small><div class="meter"><div class="fill" style="width:84%"></div></div></div>
-      </aside>
-    </section>
+<div class="desert"></div>
+<div class="wrap">
+<header class="hero">
+  <span class="badge">🇶🇦 قطر → 🇸🇦 السعودية → 🇯🇴 الأردن</span>
+  <h1 class="title">دليل السفر التفاعلي الفاخر إلى القريات</h1>
+  <p class="subtitle">المسار الأساسي + المسار البديل عبر طريق 65، محطات الوقود، أدعية السفر، وقائمة فحص ذكية قبل الانطلاق.</p>
+  <div class="heroGrid">
+    <div class="stat"><b>7+</b> مراحل رئيسية</div><div class="stat"><b>95 / 91</b> وقود متوفر حسب التجربة</div><div class="stat"><b>طريق 65</b> مسار بديل واسع</div><div class="stat"><b id="clock">--:--</b> توقيت مباشر</div>
+  </div>
+</header>
+<nav class="nav">
+  <a href="#dua">🤲 الأدعية</a><a href="#azkar">📿 الأذكار</a><a href="#checklist">✅ قبل السفر</a><a href="#routes">🛣️ المسارات</a><a href="#fuel">⛽ الوقود</a><a href="#tips">🚗 نصائح الطريق</a>
+</nav>
 
-    <h2 class="section-title" id="route">تفاصيل المسار خطوة بخطوة</h2>
-    <section class="route" id="cards"></section>
+<section id="dua" class="section">
+ <div class="head"><h2>🤲 دعاء السفر</h2><p>بطاقة قابلة للنسخ</p></div>
+ <div class="card dua" id="travelDua">اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ<br>سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ، وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ.<br>اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى، وَمِنَ الْعَمَلِ مَا تَرْضَى.<br>اللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا وَاطْوِ عَنَّا بُعْدَهُ.<br>اللَّهُمَّ أَنْتَ الصَّاحِبُ فِي السَّفَرِ، وَالْخَلِيفَةُ فِي الْأَهْلِ.<br>اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ وَعْثَاءِ السَّفَرِ، وَكَآبَةِ الْمَنْظَرِ، وَسُوءِ الْمُنْقَلَبِ فِي الْمَالِ وَالأَهْلِ.</div>
+ <div class="copyRow"><button class="btn" onclick="copyText('travelDua')">📋 نسخ الدعاء</button><span class="pill">المصدر: صحيح مسلم</span></div>
+</section>
 
+<section id="azkar" class="section">
+ <div class="head"><h2>📿 أذكار السفر والطريق</h2><p>للطمأنينة والحفظ بإذن الله</p></div>
+ <div class="grid">
+  <div class="card"><h3>عند النزول في مكان</h3><p class="dua" id="z1">أَعُوذُ بِكَلِمَاتِ اللهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ</p><button class="btn" onclick="copyText('z1')">نسخ</button></div>
+  <div class="card"><h3>عند الرجوع من السفر</h3><p class="dua" id="z2">آيِبُونَ، تَائِبُونَ، عَابِدُونَ، لِرَبِّنَا حَامِدُونَ</p><button class="btn" onclick="copyText('z2')">نسخ</button></div>
+  <div class="card"><h3>أثناء الطريق</h3><p>عند الصعود: <b>الله أكبر</b><br>عند النزول: <b>سبحان الله</b><br>وأكثر من الاستغفار والصلاة على النبي ﷺ.</p></div>
+ </div>
+</section>
 
-    <h2 class="section-title" id="fuel">محطات الوقود أثناء الرحلة حسب تجربة المسافر</h2>
-    <div class="tool" style="margin-bottom:14px"><h4>⛽ ملاحظة مهمة</h4><p>المحطات التالية من تجربة شخص قام بالتعبئة من بنزين 95، وذكر أن 91 متوفر أيضاً. قد تتغير الخدمات أو الازدحام؛ لذلك افتح الرابط قبل الوصول وتأكد من الوقود.</p></div>
-    <section class="fuel-grid" id="fuelCards"></section>
+<section id="checklist" class="section">
+ <div class="head"><h2>✅ قائمة فحص قبل السفر</h2><p>تُحفظ تلقائيًا على جهازك</p></div>
+ <div class="grid">
+  <div class="card ok"><h3>🚙 السيارة</h3><div id="carChecks"></div></div>
+  <div class="card ok"><h3>📱 التجهيزات</h3><div id="gearChecks"></div></div>
+  <div class="card warn"><h3>⚠️ مهم جدًا</h3><p>لا تنزل عن نصف الخزان في المقاطع الطويلة، وعبّئ فل قبل مغادرة حائل أو قبل الدخول في المناطق قليلة الخدمات.</p><p>حمّل خرائط Google بدون إنترنت، وتأكد من صلاحية الإطارات والاحتياطي.</p></div>
+ </div>
+</section>
 
-    <h2 class="section-title">تنبيهات مهمة قبل الانطلاق</h2>
-    <section class="tools">
-      <div class="tool"><h4>⛽ الوقود</h4><p>أفضل نقاط التزوّد: محطة الدريس خريص، محطة الرياض، محطة الصعقوب عنيزة، محطة الرمال الذهبية، ومحطة الدريس قبل أبو عجرم.</p></div>
-      <div class="tool"><h4>🕒 التوقيت</h4><p>يفضل الانطلاق مبكراً وتجنب القيادة المتواصلة الطويلة ليلاً، خصوصاً في المنطقة قليلة الخدمات.</p></div>
-      <div class="tool"><h4>🧰 السلامة</h4><p>تأكد من الإطارات، ماء الرديتر، زيت المحرك، الإضاءة، الشاحن، الماء، ومستلزمات الطوارئ.</p></div>
-    </section>
-    <div class="footer">إعداد مسار تفاعلي قابل للطباعة والمشاركة — جميع المسافات والأوقات تقريبية حسب المعلومات المدخلة.</div>
-  </main>
-  <button class="topBtn" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
-  <script>
-    const fuelStops = [
-      {name:'آخر محطة وقود في قطر', stage:'قبل منفذ سلوى', dist:'نقطة البداية للتعبئة الكاملة', fuel:'95 و91', note:'ينصح بتعبئة فل قبل الخروج من قطر.', link:'https://maps.app.goo.gl/jrEaP2ptDRfbWkth7', critical:true},
-      {name:'محطة قبل الهفوف', stage:'بعد 130 كم تقريباً', dist:'130 كم من آخر محطة في قطر', fuel:'95 و91', note:'توقف مبكر مناسب بعد دخول السعودية وقبل الهفوف.', link:'https://maps.app.goo.gl/DxemwHSwM46EszsXA'},
-      {name:'محطة ساسكو – بعد الهفوف', stage:'بعد 83 كم تقريباً', dist:'83 كم من محطة قبل الهفوف', fuel:'95 و91', note:'محطة مناسبة بعد الهفوف لإكمال الطريق باتجاه الرياض.', link:'https://maps.app.goo.gl/Uj7NgqyZDzaDEuqE9'},
-      {name:'محطة قبل الرياض بقليل', stage:'بعد 210 كم تقريباً', dist:'210 كم من محطة ساسكو', fuel:'95 و91', note:'توجد محطات في الطريق، لكن هذه كانت محطة التزوّد الفعلية حسب التجربة.', link:'https://maps.app.goo.gl/A16e4Y66WBZEJSS87'},
-      {name:'محطة منطقة المجمعة', stage:'بعد الرياض', dist:'240 كم تقريباً من محطة قبل الرياض', fuel:'95 و91', note:'توجد محطات بين الرياض والمجمعة، لكن لم يتم التوقف عليها في التجربة.', link:'https://maps.app.goo.gl/PrE8x2GdWNsxP7FZ9'},
-      {name:'محطة الدريس – بعد بريدة', stage:'منطقة القصيم', dist:'182 كم تقريباً من المجمعة', fuel:'95 و91', note:'نقطة جيدة قبل سحب الطريق باتجاه حائل.', link:'https://maps.app.goo.gl/9zNeqFGP8GqD266C7'},
-      {name:'الراحة في حائل', stage:'بعد 250 كم تقريباً', dist:'250 كم تقريباً من محطة الدريس بعد بريدة', fuel:'—', note:'توقف مبيت مقترح. حسب التجربة وصل الخزان فوق النصف بقليل.', link:'https://maps.app.goo.gl/VG6bQkKyawBHp6bx7?g_st=iw'},
-      {name:'محطة حائل قبل الرمال الذهبية', stage:'صباح اليوم الثاني', dist:'قريبة من حائل وقبل الرمال الذهبية بقليل', fuel:'95 و91', note:'تعبئة مهمة قبل دخول المقاطع الأطول شمالاً.', link:'https://maps.app.goo.gl/iqMFmPStP87EkgkP6', critical:true},
-      {name:'محطة بريك / العليم الجديدة', stage:'بعد حائل باتجاه الجوف', dist:'197 كم من محطة حائل', fuel:'95 و91', note:'محطة مهمة بعد الخروج من حائل.', link:'https://maps.app.goo.gl/s5He9bsRBjnkrh5t5'},
-      {name:'محطة العليان – دومة الجندل', stage:'منطقة دومة الجندل', dist:'121 كم من محطة بريك / العليم', fuel:'95 و91', note:'توقف ممتاز قبل الإكمال نحو القريات.', link:'https://maps.app.goo.gl/m76c3aetXoChmeTT8'},
-      {name:'محطة النباج', stage:'قبل القريات', dist:'148 كم من محطة العليان', fuel:'95 و91', note:'يوجد على الطريق محطات بعضها يعمل وبعضها مهجور؛ لا تعتمد على محطة غير مؤكدة.', link:'https://maps.app.goo.gl/F5P5kpV7E6WrbzWY9', critical:true},
-      {name:'محطة هلا القريات', stage:'آخر محطة قبل الحدود', dist:'بعد محطة النباج باتجاه القريات', fuel:'95 و91', note:'قد تكون مزدحمة، وبحسب التجربة مضخة 95 واحدة وعليها طابور. بعدها بنحو 2 كم تصل إلى الحدود.', link:'https://maps.app.goo.gl/6iiB2PLpjf3YeHXZ6', critical:true}
-    ];
+<section id="routes" class="section">
+ <div class="head"><h2>🛣️ المسارات التفاعلية</h2><p>اختر المسار المناسب</p></div>
+ <div class="tabs"><button class="btn tab active" onclick="showPanel('main',this)">المسار الأساسي</button><button class="btn tab" onclick="showPanel('alt',this)">المسار البديل طريق 65</button></div>
+ <div class="card panel active" id="main"><h3>المسار الأساسي عبر خريص - الرياض - عنيزة - حائل - الجوف - القريات</h3><div class="timeline" id="mainStops"></div></div>
+ <div class="card panel" id="alt"><h3>⭐ المسار البديل الموصى به عبر مركز سابك → شارع الملك سلمان → طريق 65 باتجاه حائل</h3><p class="pill">شوارع واسعة • قيادة مريحة • مناسب لتجنب زحمة الرياض • حسب وصفك: طريق مثل الكف ولا مطب</p><p><a class="btn map" target="_blank" href="https://maps.app.goo.gl/zRJsSG46BRV2V31r8?g_st=ac">فتح المسار البديل في خرائط Google</a></p></div>
+</section>
 
-    const stops = [
-      {from:'منفذ سلوى', to:'محطة الدريس – أول خريص', km:215, min:120, link:'https://maps.app.goo.gl/4nSj4xmAzioZCiaF6?g_st=iwb'},
-      {from:'محطة الدريس – خريص', to:'محطة جرش أو Well – أول الرياض', km:249, min:135, link:'https://maps.app.goo.gl/LkKVBTQYyjg5krxf9?g_st=iw'},
-      {from:'محطة جرش أو Well', to:'محطة الصعقوب – عنيزة', km:348, min:210, link:'https://maps.app.goo.gl/HboRM8ESXejp5HHY9?g_st=iw'},
-      {from:'محطة الصعقوب – عنيزة', to:'فندق روم إن – حائل', km:290, min:170, link:'https://maps.app.goo.gl/VG6bQkKyawBHp6bx7?g_st=iw'},
-      {from:'فندق روم إن – حائل', to:'محطة الرمال الذهبية قبل المنطقة المقطوعة', km:40, min:30, link:'https://maps.app.goo.gl/13avQWuxUsvQKNAV9?g_st=iw'},
-      {from:'محطة الرمال الذهبية', to:'محطة الدريس في الجوف قبل أبو عجرم', km:318, min:180, link:'https://maps.app.goo.gl/nnv7tkHyanCnAJkP7?g_st=iw', warn:'مرحلة طويلة نسبياً؛ يفضل التزوّد الكامل بالوقود والماء قبل الانطلاق.'},
-      {from:'محطة الدريس في الجوف قبل أبو عجرم', to:'محطة الزبن – القريات', km:291, min:175, link:'https://maps.app.goo.gl/kqE8kBoTbr2nUP6b6?g_st=iw'}
-    ];
-    const cards = document.getElementById('cards');
-    const fuelCards = document.getElementById('fuelCards');
-    function fmt(min){const h=Math.floor(min/60), m=min%60; return m?`${h}:${String(m).padStart(2,'0')} ساعة`:`${h} ساعات`;}
-    cards.innerHTML = stops.map((s,i)=>`<article class="card ${s.warn?'long':''}" data-num="${i+1}">
-      <h3>${s.from} ← ${s.to}</h3>
-      <div class="meta"><span class="chip gold">📍 ${s.km} كم تقريباً</span><span class="chip">⏱️ ${fmt(s.min)}</span><span class="chip">🚗 مرحلة ${i+1} من ${stops.length}</span></div>
-      ${s.warn?`<p class="note">⚠️ ${s.warn}</p>`:''}
-      <a class="btn primary" target="_blank" rel="noopener" href="${s.link}">فتح المرحلة في خرائط Google</a>
-    </article>`).join('');
+<section id="fuel" class="section">
+ <div class="head"><h2>⛽ محطات الوقود أثناء الرحلة</h2><p>حسب تجربة الشخص: بنزين 95 و91</p></div>
+ <div class="card"><div class="timeline" id="fuelStops"></div></div>
+</section>
 
-    fuelCards.innerHTML = fuelStops.map((f,i)=>`<article class="fuel-card ${f.critical?'critical':''}">
-      <span class="fuel-badge">⛽ محطة ${i+1}</span>
-      <h3>${f.name}</h3>
-      <p>${f.note}</p>
-      <div class="fuel-list">
-        <div class="fuel-row"><strong>الموقع في الرحلة</strong><span>${f.stage}</span></div>
-        <div class="fuel-row"><strong>المسافة من التوقف السابق</strong><span>${f.dist}</span></div>
-        <div class="fuel-row"><strong>نوع الوقود المذكور</strong><span>${f.fuel}</span></div>
-      </div>
-      <div class="fuel-actions"><a class="btn ${f.critical?'warn':'fuel'}" target="_blank" rel="noopener" href="${f.link}">فتح المحطة في خرائط Google</a></div>
-    </article>`).join('');
+<section id="tips" class="section">
+ <div class="head"><h2>🚗 أهم النصائح قبل وأثناء الرحلة</h2><p>مختصرة وعملية</p></div>
+ <div class="grid">
+  <div class="card"><h3>قبل الانطلاق</h3><p>نم جيدًا، افحص السيارة، عبّئ الوقود، جهّز ماء ووجبات خفيفة، وتأكد من الوثائق والخرائط.</p></div>
+  <div class="card"><h3>أثناء القيادة</h3><p>استراحة كل ساعتين تقريبًا، عدم استخدام الجوال، الالتزام بالسرعة النظامية، ومراقبة حرارة المحرك والزيت والبطارية.</p></div>
+  <div class="card warn"><h3>المقاطع قليلة الخدمات</h3><p>بعد حائل باتجاه الجوف والقريات توجد مناطق طويلة؛ اجعل خزان الوقود مرتفعًا ولا تؤجل التعبئة.</p></div>
+ </div>
+</section>
 
-    const totalKm = stops.reduce((a,b)=>a+b.km,0), totalMin=stops.reduce((a,b)=>a+b.min,0);
-    function animate(id,end,suffix=''){let n=0,step=Math.ceil(end/55),el=document.getElementById(id);let t=setInterval(()=>{n+=step;if(n>=end){n=end;clearInterval(t)}el.textContent=n+suffix},18)}
-    animate('km',totalKm); animate('time',Math.round(totalMin/60));
-    let compact=false; function toggleCompact(){compact=!compact;document.querySelectorAll('.note,.card .btn').forEach(e=>e.style.display=compact?'none':'inline-flex');}
-  </script>
+<section class="section source">
+ <div class="card"><h3>مصادر الأذكار</h3><p>دعاء النزول ثابت في صحيح مسلم، وحديث الرجوع من السفر بلفظ «آيبون تائبون...» ثابت في الصحيحين. أُدرجت الأذكار هنا للتذكير وليست بديلاً عن الرجوع للمصادر الشرعية.</p></div>
+</section>
+<div class="footer">رحلة موفقة وسلامة دائمة بإذن الله ✨</div>
+</div>
+<script>
+const mainStops=[
+['1','منفذ سلوى → محطة الدريس أول خريص','حوالي 215 كم • ساعتان تقريبًا','https://maps.app.goo.gl/4nSj4xmAzioZCiaF6?g_st=iwb'],
+['2','الدريس خريص → محطة جرش أو well أول الرياض','249 كم • 2:15 تقريبًا','https://maps.app.goo.gl/LkKVBTQYyjg5krxf9?g_st=iw'],
+['3','جرش/well → محطة الصعقوب عنيزة','348 كم • 3:30 تقريبًا','https://maps.app.goo.gl/HboRM8ESXejp5HHY9?g_st=iw'],
+['4','الصعقوب عنيزة → فندق روم إن حائل','290 كم • 2:50 تقريبًا','https://maps.app.goo.gl/VG6bQkKyawBHp6bx7?g_st=iw'],
+['5','فندق روم إن حائل → محطة الرمال الذهبية','40 كم • نصف ساعة تقريبًا','https://maps.app.goo.gl/13avQWuxUsvQKNAV9?g_st=iw'],
+['6','الرمال الذهبية → الدريس الجوف قبل أبو عجرم','318 كم • 3 ساعات تقريبًا • مقطع طويل','https://maps.app.goo.gl/nnv7tkHyanCnAJkP7?g_st=iw'],
+['7','الدريس الجوف → محطة الزبن القريات','291 كم • 2:55 تقريبًا','https://maps.app.goo.gl/kqE8kBoTbr2nUP6b6?g_st=iw']
+];
+const fuelStops=[
+['1','آخر محطة وقود في قطر','البداية قبل منفذ سلوى • 95 و91 حسب التجربة','https://maps.app.goo.gl/jrEaP2ptDRfbWkth7'],
+['2','محطة قبل الهفوف','بعد 130 كم تقريبًا','https://maps.app.goo.gl/DxemwHSwM46EszsXA'],
+['3','ساسكو بعد الهفوف','بعد 83 كم تقريبًا','https://maps.app.goo.gl/Uj7NgqyZDzaDEuqE9'],
+['4','قبل الرياض بشوي','بعد 210 كم تقريبًا • توجد محطات بينية','https://maps.app.goo.gl/A16e4Y66WBZEJSS87'],
+['5','منطقة المجمعة بعد الرياض','بعد 240 كم تقريبًا • توجد محطات بينية','https://maps.app.goo.gl/PrE8x2GdWNsxP7FZ9'],
+['6','الدريس بعد بريدة','بعد 182 كم تقريبًا','https://maps.app.goo.gl/9zNeqFGP8GqD266C7'],
+['7','محطة حائل قبل الرمال الذهبية','بعد المبيت في حائل • عبّئ قبل المقاطع الطويلة','https://maps.app.goo.gl/iqMFmPStP87EkgkP6'],
+['8','محطة بريك/العليم الجديدة','197 كم من حائل تقريبًا','https://maps.app.goo.gl/s5He9bsRBjnkrh5t5'],
+['9','محطة العليان في دومة الجندل','121 كم تقريبًا','https://maps.app.goo.gl/m76c3aetXoChmeTT8'],
+['10','محطة النباج','148 كم تقريبًا • بعض المحطات بالطريق شغالة وبعضها مهجورة','https://maps.app.goo.gl/F5P5kpV7E6WrbzWY9'],
+['11','آخر محطة هلا القريات','قبل الحدود بـ 2 كم تقريبًا • غالبًا مزدحمة و95 مضخة واحدة حسب التجربة','https://maps.app.goo.gl/6iiB2PLpjf3YeHXZ6']
+];
+function renderStops(id,data){document.getElementById(id).innerHTML=data.map(s=>`<div class="stop"><div class="num">${s[0]}</div><div><h3>${s[1]}</h3><p>${s[2]}</p></div><a class="btn map" target="_blank" href="${s[3]}">الخريطة</a></div>`).join('')}
+renderStops('mainStops',mainStops);renderStops('fuelStops',fuelStops);
+const car=['زيت المحرك','ماء الرديتر','زيت القير','زيت الفرامل','البطارية والدينمو','ضغط الإطارات','الإطار الاحتياطي','العفريتة ومفتاح الإطارات'];
+const gear=['بطاقة الهوية والجوازات','شاحن سيارة وباور بانك','خرائط Offline','ماء وتمر ووجبات خفيفة','صندوق إسعافات أولية','إنترنت يعمل في السعودية والأردن','حامل جوال','أكياس ومناديل ومعقم'];
+function checks(id,arr){document.getElementById(id).innerHTML=arr.map((x,i)=>`<label class="check"><input type="checkbox" data-key="${id}${i}"> ${x}</label>`).join('')}
+checks('carChecks',car);checks('gearChecks',gear);
+document.querySelectorAll('input[type=checkbox]').forEach(cb=>{cb.checked=localStorage.getItem(cb.dataset.key)==='1';cb.onchange=()=>localStorage.setItem(cb.dataset.key,cb.checked?'1':'0')});
+function showPanel(id,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active')}
+function copyText(id){const t=document.getElementById(id).innerText;navigator.clipboard.writeText(t).then(()=>alert('تم النسخ ✅'))}
+function tick(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('ar-QA',{hour:'2-digit',minute:'2-digit'})}tick();setInterval(tick,30000);
+</script>
 </body>
 </html>
