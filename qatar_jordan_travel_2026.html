@@ -197,6 +197,29 @@ td:nth-child(2){color:var(--maroon);font-weight:1000}
   font-weight:1000;
 }
 
+
+.alt-route-box{
+  margin-top:16px;
+  background:linear-gradient(135deg,#fff,#fff8e8);
+  border:1px solid rgba(214,168,79,.55);
+  border-radius:22px;
+  padding:16px;
+  box-shadow:0 10px 26px rgba(8,25,47,.05);
+}
+.alt-route-box h3{margin:0 0 10px;color:var(--maroon2)}
+.alt-route-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+.alt-step{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:12px;
+  font-weight:900;
+  color:#17233a;
+  line-height:1.7;
+}
+.alt-step small{display:block;color:#667085;font-weight:800}
+@media(max-width:820px){.alt-route-steps{grid-template-columns:1fr}}
+
 @media(max-width:1100px){.routes{grid-template-columns:repeat(2,1fr)!important}.station-grid,.fuel-grid,.tips,.emergency{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:820px){.stats,.routes,.station-grid,.fuel-grid,.tips,.emergency,.stage-grid,.check-wrap{grid-template-columns:1fr}.panel,.hero-card{padding:20px}.navbar{border-radius:22px}.map-frame iframe{height:230px}.float{position:static;margin:20px auto;width:min(1180px,94vw)}}
 @media print{.navbar,.float,.actions .btn.ghost,.map-frame{display:none!important}body{background:#fff}.panel,.hero-card,.card,.route-card{box-shadow:none}}
@@ -249,7 +272,7 @@ td:nth-child(2){color:var(--maroon);font-weight:1000}
           <p>يتفرع إلى مسارين: المسار التقليدي عبر الرياض والقريات، والمسار البديل عبر طريق 65 باتجاه حائل.</p>
           <div class="actions">
             <a class="btn primary small" href="#interactive" onclick="openRoutePanel('via-riyadh')">عرض مساري الرياض</a>
-            <a class="btn secondary small" target="_blank" href="https://maps.app.goo.gl/zRJsSG46BRV2V31r8?g_st=ac">فتح طريق 65</a>
+            <a class="btn secondary small" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=SABIC%20Center%2C%20Riyadh%2C%20Saudi%20Arabia&destination=Al%20Omari%20Border%20Crossing%2C%20Jordan&waypoints=King%20Salman%20Bin%20Abdulaziz%20Road%2C%20Riyadh%2C%20Saudi%20Arabia%7CRoute%2065%2C%20Saudi%20Arabia%7CHail%2C%20Saudi%20Arabia%7CSakaka%2C%20Saudi%20Arabia%7CDumat%20Al%20Jandal%2C%20Saudi%20Arabia%7CQurayyat%2C%20Saudi%20Arabia&travelmode=driving">فتح طريق 65 حتى العمري</a>
           </div>
         </article>
         <article class="route-card featured">
@@ -285,17 +308,36 @@ td:nth-child(2){color:var(--maroon);font-weight:1000}
           </article>
           <article class="subroute-card">
             <span class="tag">رياض 2</span>
-            <h3>المسار البديل عبر طريق 65</h3>
-            <p>من مركز سابك باتجاه شارع الملك سلمان بن عبدالعزيز ثم طريق 65 باتجاه حائل، وهو مسار واسع ومريح حسب التجربة.</p>
-            <div class="actions"><a class="btn secondary small" target="_blank" href="https://maps.app.goo.gl/zRJsSG46BRV2V31r8?g_st=ac">فتح طريق 65</a></div>
+            <h3>المسار البديل عبر طريق 65 حتى حدود العمري</h3>
+            <p>من مركز سابك باتجاه شارع الملك سلمان بن عبدالعزيز، ثم طريق 65 باتجاه حائل والجوف والقريات، وصولًا إلى مركز حدود العمري.</p>
+            <div class="actions">
+              <a class="btn secondary small" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=SABIC%20Center%2C%20Riyadh%2C%20Saudi%20Arabia&destination=Al%20Omari%20Border%20Crossing%2C%20Jordan&waypoints=King%20Salman%20Bin%20Abdulaziz%20Road%2C%20Riyadh%2C%20Saudi%20Arabia%7CRoute%2065%2C%20Saudi%20Arabia%7CHail%2C%20Saudi%20Arabia%7CSakaka%2C%20Saudi%20Arabia%7CDumat%20Al%20Jandal%2C%20Saudi%20Arabia%7CQurayyat%2C%20Saudi%20Arabia&travelmode=driving">فتح المسار الكامل إلى العمري</a>
+            </div>
           </article>
         </div>
         <div class="divider-title" id="riyadhClassic">رياض 1: المسار التقليدي عبر الرياض والقريات</div>
         <div class="stage-grid" id="riyadhGrid"></div>
-        <div class="divider-title">رياض 2: المسار البديل عبر طريق 65</div>
-        <div class="note">المسار البديل يبدأ من مركز سابك باتجاه شارع الملك سلمان بن عبدالعزيز، ثم طريق 65 باتجاه حائل. مناسب عند الرغبة في طريق واسع ومريح وتجنب تعقيدات الدخول في الرياض عند الحاجة.</div>
+        <div class="divider-title">رياض 2: المسار البديل عبر طريق 65 حتى مركز حدود العمري</div>
+        <div class="note">المسار البديل يبدأ من مركز سابك باتجاه شارع الملك سلمان بن عبدالعزيز، ثم طريق 65 باتجاه حائل، وبعدها الجوف / سكاكا، ثم دومة الجندل والقريات، وصولًا إلى مركز حدود العمري. مناسب عند الرغبة في طريق واسع ومريح وتجنب تعقيدات الدخول في الرياض عند الحاجة.</div>
         <div class="actions" style="margin-bottom:14px">
-          <a class="btn primary" target="_blank" href="https://maps.app.goo.gl/zRJsSG46BRV2V31r8?g_st=ac">فتح المسار البديل طريق 65</a>
+          <a class="btn primary" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=SABIC%20Center%2C%20Riyadh%2C%20Saudi%20Arabia&destination=Al%20Omari%20Border%20Crossing%2C%20Jordan&waypoints=King%20Salman%20Bin%20Abdulaziz%20Road%2C%20Riyadh%2C%20Saudi%20Arabia%7CRoute%2065%2C%20Saudi%20Arabia%7CHail%2C%20Saudi%20Arabia%7CSakaka%2C%20Saudi%20Arabia%7CDumat%20Al%20Jandal%2C%20Saudi%20Arabia%7CQurayyat%2C%20Saudi%20Arabia&travelmode=driving">فتح المسار الكامل في خرائط جوجل</a>
+          <a class="btn secondary" target="_blank" href="https://maps.app.goo.gl/zRJsSG46BRV2V31r8?g_st=ac">فتح رابطك الأصلي</a>
+        </div>
+        <div class="alt-route-box">
+          <h3>مراحل طريق الرياض البديل</h3>
+          <div class="alt-route-steps">
+            <div class="alt-step">1. مركز سابك <small>نقطة بداية المسار البديل</small></div>
+            <div class="alt-step">2. شارع الملك سلمان بن عبدالعزيز <small>الخروج باتجاه الطريق الأوسع</small></div>
+            <div class="alt-step">3. طريق 65 باتجاه حائل <small>المقطع الرئيس للمسار البديل</small></div>
+            <div class="alt-step">4. حائل <small>نقطة توقف وراحة مهمة</small></div>
+            <div class="alt-step">5. سكاكا / الجوف <small>متابعة الطريق شمالًا</small></div>
+            <div class="alt-step">6. دومة الجندل <small>نقطة بارزة قبل القريات</small></div>
+            <div class="alt-step">7. القريات <small>آخر مدينة رئيسية قبل الحدود</small></div>
+            <div class="alt-step">8. مركز حدود العمري <small>الوصول إلى المنفذ باتجاه الأردن</small></div>
+          </div>
+          <div class="map-frame">
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=SABIC%20Center%20Riyadh%20to%20Al%20Omari%20Border%20Crossing%20via%20Route%2065%20Hail%20Sakaka%20Qurayyat&output=embed" title="خريطة طريق الرياض البديل حتى مركز حدود العمري"></iframe>
+          </div>
         </div>
       </div>
 
@@ -325,7 +367,7 @@ td:nth-child(2){color:var(--maroon);font-weight:1000}
 
   <section class="section" id="fuel">
     <div class="panel">
-      <div class="head"><h2>⛽ محطات الوقود طريق الرياض </h2><span class="pill">بنزين 95 ويتوفر غالباً 91</span></div>
+      <div class="head"><h2>⛽ محطات الوقود حسب تجربة المسافر</h2><span class="pill">بنزين 95 ويتوفر غالباً 91</span></div>
       <div class="note"><b>قاعدة ذهبية:</b> لا تنتظر انخفاض الوقود. في السفر الطويل اجعل التعبئة عند نصف الخزان أو قبله، خاصة قبل حائل، الجوف، دومة الجندل، والقريات.</div>
       <div class="fuel-grid" id="fuelGrid"></div>
     </div>
