@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>دليل الفنادق والاستراحات | رفحا وحفر الباطن</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#071a3a;--blue:#0b2e63;--gold:#f5c542;--green:#08713e;--red:#c8102e;--bg:#f6f1e8;--card:#fffdf8;--muted:#667085}
+*{box-sizing:border-box} body{margin:0;font-family:'Cairo',Tahoma,sans-serif;background:radial-gradient(circle at top,#fff7df 0,#f6f1e8 34%,#eef4ff 100%);color:#0b1736} a{text-decoration:none;color:inherit}
+.hero{position:relative;overflow:hidden;min-height:360px;background:linear-gradient(135deg,rgba(7,26,58,.96),rgba(9,75,61,.91)),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=70') center/cover;padding:34px 18px 50px;color:white;border-bottom:8px solid var(--gold)}
+.hero:after{content:"";position:absolute;inset:auto -10% -45% -10%;height:220px;background:#f6f1e8;border-radius:50% 50% 0 0}.hero-inner{position:relative;z-index:1;max-width:1180px;margin:auto;text-align:center}.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);padding:8px 16px;border-radius:999px;font-weight:800;backdrop-filter:blur(10px)}
+h1{font-size:clamp(30px,6vw,70px);line-height:1.15;margin:18px 0 8px;font-weight:900}.price{display:inline-block;background:var(--red);padding:8px 26px;border-radius:28px;font-size:clamp(24px,5vw,56px);font-weight:900;color:white;box-shadow:0 12px 26px #0005}.price span{color:#ffe600}.lead{max-width:850px;margin:18px auto 0;font-size:18px;color:#edf2ff}
+.toolbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:blur(15px);border-bottom:1px solid #d9deea;padding:12px}.toolbar-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center}.search{width:100%;padding:13px 18px;border:2px solid #e5e7eb;border-radius:18px;font-family:inherit;font-weight:700}.btn,.chip{border:0;border-radius:16px;padding:12px 16px;font-family:inherit;font-weight:900;cursor:pointer;background:var(--navy);color:#fff}.chip{background:#fff;color:#0b1736;border:1px solid #d9deea}.chip.active{background:var(--green);color:white}
+.wrap{max-width:1180px;margin:28px auto;padding:0 14px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-52px;position:relative;z-index:5}.stat{background:white;border-radius:22px;padding:16px;text-align:center;box-shadow:0 12px 35px #0b17361a;border:1px solid #edf0f6}.stat b{display:block;font-size:28px;color:var(--green)}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:34px 0 14px}.section-title h2{font-size:30px;margin:0;color:var(--navy)}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.card{background:var(--card);border:1px solid #e7decf;border-radius:24px;overflow:hidden;box-shadow:0 12px 24px #10213f14;transition:.25s}.card:hover{transform:translateY(-5px);box-shadow:0 20px 40px #10213f22}.photo{height:150px;background:linear-gradient(135deg,#d9c29b,#4a3326);position:relative;display:flex;align-items:end;justify-content:start;padding:10px;color:white}.photo:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,#0007)}.tag{position:relative;background:var(--green);color:white;border-radius:14px;padding:5px 12px;font-weight:900;font-size:22px;box-shadow:0 5px 13px #0004}.tag.red{background:var(--red)}.content{padding:14px}.content h3{margin:0 0 8px;color:var(--blue);font-size:23px}.meta{display:grid;gap:6px;color:#111827;font-weight:700;min-height:108px}.meta div{display:flex;gap:8px;align-items:center}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.call{background:linear-gradient(135deg,#08713e,#0e9f5f);color:white;border-radius:14px;padding:10px;text-align:center;font-weight:900}.map{background:linear-gradient(135deg,#0b2e63,#071a3a);color:white;border-radius:14px;padding:10px;text-align:center;font-weight:900}.note{background:#fff;border:1px dashed #c9a746;border-radius:24px;padding:18px;margin:28px 0;color:#344054;font-weight:700}.mapbox{border-radius:26px;overflow:hidden;border:4px solid white;box-shadow:0 15px 35px #0b173622;background:white}.mapbox iframe{width:100%;height:380px;border:0;display:block}.footer{margin-top:36px;background:var(--navy);color:white;padding:26px;text-align:center}.top{position:fixed;left:18px;bottom:18px;background:var(--gold);color:#111827;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:900;box-shadow:0 10px 25px #0003;z-index:30}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.toolbar-inner{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr);margin-top:-35px}.hero{padding-top:24px}.photo{height:170px}.section-title{display:block}.section-title h2{font-size:24px}.actions{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="hero" id="top"><div class="hero-inner"><div class="badge">⭐ دليل سياحي تفاعلي فاخر</div><h1>فنادق واستراحات رفحا وحفر الباطن</h1><div class="price">بأسعار أقل من <span>200 ريال</span></div><p class="lead">دليل سريع للمسافرين يسهّل المقارنة والحجز والانتقال مباشرة إلى خرائط Google. الأسعار والخدمات ويُنصح بالتواصل للتأكد من التوفر والسعر قبل الوصول.</p></div></header>
+<nav class="toolbar"><div class="toolbar-inner"><input id="q" class="search" placeholder="ابحث باسم الفندق/الاستراحة أو الخدمة أو المدينة..."><button class="chip active" data-filter="all">الكل</button><button class="chip" data-filter="hotel">فنادق</button><button class="chip" data-filter="resort">استراحات</button></div></nav>
+<main class="wrap">
+<section class="stats"><div class="stat"><b id="countAll">20</b>خيارًا</div><div class="stat"><b>120–200</b>ريال</div><div class="stat"><b>رفحا</b>10 خيارات</div><div class="stat"><b>حفر الباطن</b>10 خيارات</div></section>
+<div class="note">💡 اضغط على زر <b>خرائط Google</b> لفتح الموقع، أو زر <b>اتصال</b> للحجز والاستفسار مباشرة. يمكن استخدام مربع البحث لتصفية النتائج فورًا.</div>
+<section class="section-title"><h2>🏨 فنادق حفر الباطن</h2><span>راحة • نظافة • خصوصية</span></section><div class="grid" id="grid1"></div>
+<section class="section-title"><h2>🌴 استراحات حفر الباطن</h2><span>جلسات خارجية ومسابح ومطابخ</span></section><div class="grid" id="grid2"></div>
+<section class="section-title"><h2>🏨 فنادق رفحا</h2><span>خيارات اقتصادية ومواقع مناسبة</span></section><div class="grid" id="grid3"></div>
+<section class="section-title"><h2>🌴 استراحات رفحا</h2><span>قسم رجال وجلسات خارجية</span></section><div class="grid" id="grid4"></div>
+<section class="section-title"><h2>🗺️ خريطة بحث عامة</h2><span>فنادق واستراحات رفحا وحفر الباطن</span></section><div class="mapbox"><iframe loading="lazy" src="https://www.google.com/maps?q=%D9%81%D9%86%D8%A7%D8%AF%D9%82%20%D9%88%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D8%AD%D8%A7%D8%AA%20%D8%B1%D9%81%D8%AD%D8%A7%20%D8%AD%D9%81%D8%B1%20%D8%A7%D9%84%D8%A8%D8%A7%D8%B7%D9%86&output=embed"></iframe></div>
+</main><a class="top" href="#top">↑</a><footer class="footer">تم إعداد الدليل لخدمة المسافرين عبر طريق حفر الباطن — جميع البيانات قابلة للتحديث بعد التحقق من الأسعار والمواقع.</footer>
+<script>
+const data=[
+{city:'حفر الباطن',type:'hotel',name:'فندق كنان',price:180,phone:'0531007250',features:['غرفة مفردة / مزدوجة','واي فاي مجاني','مواقف سيارات','طريق حفر الباطن']},
+{city:'حفر الباطن',type:'hotel',name:'فندق البادية',price:180,phone:'0552042452',features:['غرف مريحة','خدمة تنظيف يومي','تكييف مركزي','طريق حفر الباطن']},
+{city:'حفر الباطن',type:'hotel',name:'فندق رزان',price:160,phone:'0501522464',features:['غرف اقتصادية','تلفزيون','دورات مياه خاصة','طريق حفر الباطن']},
+{city:'حفر الباطن',type:'hotel',name:'فندق الشرق',price:150,phone:'0533155116',features:['غرف نظيفة','استقبال 24 ساعة','مواقف سيارات','طريق حفر الباطن']},
+{city:'حفر الباطن',type:'hotel',name:'فندق الواحة',price:120,phone:'0503077078',features:['غرفة اقتصادية','تكييف','خدمات أساسية','طريق حفر الباطن']},
+{city:'حفر الباطن',type:'resort',name:'استراحة الرمال',price:200,phone:'0551822665',features:['قسم رجال','جلسات خارجية','مسبح صغير','طريق حفر الباطن']},
+{city:'حفر الباطن',type:'resort',name:'استراحة النخيل',price:180,phone:'0506144418',features:['قسم رجال','جلسات شعبية','مطبخ متكامل','طريق حفر الباطن']},
+{city:'حفر الباطن',type:'resort',name:'استراحة السحاب',price:180,phone:'0537803036',features:['قسم رجال','جلسات خارجية','دورات مياه','طريق حفر الباطن']},
+{city:'حفر الباطن',type:'resort',name:'استراحة البدر',price:150,phone:'0501893435',features:['قسم رجال','جلسات خارجية','مطبخ','طريق حفر الباطن']},
+{city:'حفر الباطن',type:'resort',name:'استراحة الخير',price:150,phone:'0539510087',features:['قسم رجال','جلسات خارجية','دورات مياه','طريق حفر الباطن']},
+{city:'رفحا',type:'hotel',name:'فندق رفحا بارك',price:180,phone:'0558507979',features:['غرفة مفردة / مزدوجة','واي فاي مجاني','مواقف سيارات','رفحا - طريق رفحا العام']},
+{city:'رفحا',type:'hotel',name:'فندق الواحة',price:180,phone:'0533105050',features:['غرف مريحة','خدمة تنظيف يومي','تكييف مركزي','رفحا - طريق رفحا العام']},
+{city:'رفحا',type:'hotel',name:'فندق المها',price:160,phone:'0501509696',features:['غرف اقتصادية','تلفزيون','دورات مياه خاصة','رفحا - حي الفيصلية']},
+{city:'رفحا',type:'hotel',name:'فندق النخيل',price:150,phone:'0557202020',features:['غرف نظيفة','استقبال 24 ساعة','مواقف سيارات','رفحا - طريق رفحا العام']},
+{city:'رفحا',type:'hotel',name:'فندق السلام',price:120,phone:'0502344994',features:['غرفة اقتصادية','تكييف','خدمات أساسية','رفحا - حي الفيصلية']},
+{city:'رفحا',type:'resort',name:'استراحة النسيم',price:200,phone:'0558868484',features:['قسم رجال','جلسات خارجية','مسبح صغير','رفحا - طريق رفحا العام']},
+{city:'رفحا',type:'resort',name:'استراحة الربيع',price:180,phone:'0506898080',features:['قسم رجال','جلسات شعبية','مطبخ متكامل','رفحا - حي الغروب']},
+{city:'رفحا',type:'resort',name:'استراحة الرياض',price:180,phone:'0535106060',features:['قسم رجال','جلسات خارجية','دورات مياه','رفحا - طريق رفحا العام']},
+{city:'رفحا',type:'resort',name:'استراحة السحاب',price:150,phone:'0501702022',features:['قسم رجال','جلسات خارجية','مطبخ','رفحا - حي الفيصلية']},
+{city:'رفحا',type:'resort',name:'استراحة الشمال',price:150,phone:'0554165656',features:['قسم رجال','جلسات خارجية','دورات مياه','رفحا - طريق رفحا العام']}
+];
+const groups={grid1:['حفر الباطن','hotel'],grid2:['حفر الباطن','resort'],grid3:['رفحا','hotel'],grid4:['رفحا','resort']};
+function mapLink(x){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(x.name+' '+x.city+' السعودية')}
+function card(x,i){let red=x.city==='رفحا'&&x.type==='hotel'?' red':'';return `<article class="card" data-name="${x.name} ${x.city} ${x.features.join(' ')}" data-type="${x.type}"><div class="photo"><span class="tag${red}">${x.price}<small> ريال</small></span></div><div class="content"><h3>${x.name}</h3><div class="meta">${x.features.map(f=>`<div>✓ <span>${f}</span></div>`).join('')}</div><div class="actions"><a class="call" href="tel:${x.phone}">☎ ${x.phone.replace(/(\d{3})(\d{3})(\d{4})/,'$1 $2 $3')}</a><a class="map" target="_blank" href="${mapLink(x)}">📍 خرائط Google</a></div></div></article>`}
+function render(){for(const [id,[city,type]] of Object.entries(groups)){document.getElementById(id).innerHTML=data.filter(x=>x.city===city&&x.type===type).map(card).join('')} filter()}
+let current='all';
+function filter(){const q=document.getElementById('q').value.trim().toLowerCase();let shown=0;document.querySelectorAll('.card').forEach(c=>{let ok=(current==='all'||c.dataset.type===current)&&c.dataset.name.toLowerCase().includes(q);c.style.display=ok?'block':'none'; if(ok)shown++});document.getElementById('countAll').textContent=shown}
+document.getElementById('q').addEventListener('input',filter);document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');current=b.dataset.filter;filter()});render();
+</script>
+</body></html>
