@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>دليل السفر البري من قطر إلى الأردن 2026 | تطبيق سفر احترافي</title>
+<title>دليل السفر البري من قطر إلى الأردن 2026 | تطبيق سفر احترافي| إعداد: سامر جديع</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
@@ -158,27 +158,79 @@ button,a{touch-action:manipulation}
 @media print{.pro-audio-float,.pro-toast{display:none!important}}
 </style>
 
+
+<style id="golden-map-style">
+.golden-map-panel{
+  margin:18px 0 20px;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(215,172,69,.45);
+  background:linear-gradient(135deg,rgba(255,249,222,.9),rgba(255,255,255,.72));
+  box-shadow:0 18px 55px rgba(7,23,43,.13);
+}
+body.dark .golden-map-panel{
+  background:linear-gradient(135deg,rgba(60,43,8,.78),rgba(15,23,42,.75));
+}
+.golden-map-head{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:center;
+  padding:16px 18px;
+}
+.golden-map-head h4{
+  margin:0 0 6px;
+  font-family:Cairo,Tajawal,sans-serif;
+  color:#4b061b;
+  font-size:22px;
+}
+body.dark .golden-map-head h4{color:#fff1b8}
+.golden-map-head p{
+  margin:0;
+  color:#64748b;
+  font-weight:800;
+  line-height:1.7;
+}
+body.dark .golden-map-head p{color:#cbd5e1}
+.golden-map-head a{
+  white-space:nowrap;
+  text-decoration:none;
+  border-radius:999px;
+  padding:11px 15px;
+  background:linear-gradient(135deg,#d7ac45,#fff2b2);
+  color:#3b1f00;
+  font-family:Cairo,Tajawal,sans-serif;
+  font-weight:900;
+}
+.golden-map-panel iframe{
+  width:100%;
+  height:430px;
+  border:0;
+  display:block;
+}
+@media(max-width:800px){
+  .golden-map-head{display:block}
+  .golden-map-head a{margin-top:10px;display:inline-flex}
+  .golden-map-panel iframe{height:360px}
+}
+@media print{.golden-map-panel iframe{height:280px}}
+</style>
+
+
+<style id="remove-splash-final">
+.splash{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+</style>
+
 </head>
 <body>
 <div class="bg-stars"></div>
-
-<div class="splash" id="splash">
-  <div class="splash-card">
-    <div class="badge">🕌 تطبيق سفر احترافي 2026</div>
-    <h1>دليل السفر البري من قطر إلى الأردن</h1>
-    <p>🤍 هذه المنصة عن روح والدي الحاج نصر سليمان جديع رحمه الله.<br>نسأل الله أن يجعل هذا العمل في ميزان حسناته. الفاتحة على روحه كرماً وليس أمراً.</p>
-    <div class="splash-actions">
-      <button class="btn gold" onclick="startApp(true)">🔊 تشغيل دعاء السفر وبدء الرحلة</button>
-      <button class="btn light" onclick="startApp(false)">🚗 الدخول إلى الدليل</button>
-    </div>
-  </div>
 </div>
 
 <div class="app">
 <header class="hero" id="top">
   <span class="badge">قطر 🇶🇦 → السعودية 🇸🇦 → الأردن 🇯🇴</span>
   <h1>دليل السفر البري من قطر إلى الأردن 2026</h1>
-  <p>نسخة فائقة الأناقة تحافظ على الروابط المهمة من الصفحة الأساسية، وتضيف مشغل أدعية السفر، والمسارات الأربعة، ومحطات الوقود، وقائمة الفحص، والتنبيهات العملية.</p>
+  <p>نسخة فائقة الأناقة تضيف مشغل أدعية السفر، والمسارات الأربعة، ومحطات الوقود عبر مسار الرياض، وقائمة الفحص، والتنبيهات العملية.</p>
   <div class="memorial">🤍 هذه المنصة عن روح والدي <b>الحاج نصر سليمان جديع رحمه الله</b>، نسأل الله أن يتغمده بواسع رحمته وأن يجعل هذا العمل في ميزان حسناته. <b>الفاتحة على روحه كرماً وليس أمراً.</b></div>
   <div class="stats">
     <div class="stat"><span>عدد المسارات</span><b>4</b></div>
@@ -206,7 +258,7 @@ button,a{touch-action:manipulation}
     <button class="btn tab active" onclick="showRoute('golden65',this)">⭐ طريق الرياض 65 الذهبي</button>
     <button class="btn tab" onclick="showRoute('riyadh',this)">🏙️ طريق الرياض التقليدي</button>
     <button class="btn tab" onclick="showRoute('coastal',this)">🌊 طريق حفر الباطن المباشر</button>
-    <button class="btn tab" onclick="showRoute('hafr_direct',this)">🚙 حفر الباطن الساحلي </button>
+    <button class="btn tab" onclick="showRoute('hafr_direct',this)">🚙 طريق حفر الباطن الساحلي </button>
   </div>
   
     <article class="route-card" id="route-golden65">
@@ -218,7 +270,24 @@ button,a{touch-action:manipulation}
         </div>
         <a class="primary-link" href="https://maps.app.goo.gl/zRJsSG46BRV2V31r8?g_st=ac" target="_blank" rel="noopener">🗺️ فتح المسار الكامل</a>
       </div>
-      <div class="timeline">
+      
+<div class="golden-map-panel" id="goldenMapPanel">
+  <div class="golden-map-head">
+    <div>
+      <h4>🗺️ خريطة المسار الكامل: قطر → طريق الرياض 65 الذهبي → الأردن</h4>
+      <p>يمكن تكبير الخريطة أو فتحها مباشرة في Google Maps. تبدأ من قطر مروراً بمنفذ سلوى ثم طريق 65 باتجاه حائل والجوف والقريات وصولاً إلى الأردن.</p>
+    </div>
+    <a href="https://maps.app.goo.gl/zRJsSG46BRV2V31r8?g_st=ac" target="_blank" rel="noopener">فتح في Google Maps</a>
+  </div>
+  <iframe
+    title="خريطة المسار الذهبي من قطر إلى الأردن عبر طريق 65"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps?q=%D9%85%D9%86%D9%81%D8%B0%20%D8%B3%D9%84%D9%88%D9%89%20%D8%B7%D8%B1%D9%8A%D9%82%2065%20%D8%AD%D8%A7%D8%A6%D9%84%20%D8%A7%D9%84%D9%82%D8%B1%D9%8A%D8%A7%D8%AA%20%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86&output=embed">
+  </iframe>
+</div>
+
+<div class="timeline">
         <div class="step" style="--accent:#d7ac45">
           <div class="num">1</div>
           <div class="step-body">
@@ -923,7 +992,7 @@ button,a{touch-action:manipulation}
 <div class="floating">
   <button onclick="document.body.classList.toggle('dark')">🌙 الوضع</button>
   <button onclick="window.print()">🖨️ طباعة</button>
-  <button onclick="goTop()">⬆️ أعلى</button>
+  <button onclick="scrollTo({top:0,behavior:'smooth'})">⬆️ أعلى</button>
 </div>
 
 <div class="audio-player">
@@ -971,10 +1040,7 @@ function prevTrack() { playTrack(current-1); }
 function stopAudio() { audio.pause(); audio.currentTime = 0; playBtn.textContent='▶'; }
 audio.addEventListener('ended', nextTrack);
 
-function startApp(playDua) {
-  document.getElementById('splash').classList.add('hide');
-  if(playDua) playTrack(0);
-}
+function startApp(){ /* تم إلغاء الشاشة الترحيبية */ }
 
 function showRoute(id, btn) {
   document.querySelectorAll('.route-card').forEach(x=>x.classList.remove('active'));
@@ -1023,7 +1089,7 @@ function calcFuel(){
 <div class="pro-audio-float" id="proAudioFloat" aria-label="مشغل أدعية السفر">
   <div>
     <div class="pro-audio-title" id="proTrackTitle">🎧 الأدعية الصوتية جاهزة</div>
-    <small>ملاحظة: يعمل الصوت بعد الضغط على زر التشغيل بسبب قيود المتصفحات.</small>
+    <small>ملاحظة: تم إلغاء تشغيل دعاء السفر عند بدء الرحلة، ويمكن تشغيله يدوياً من زر الأدعية.</small>
   </div>
   <div class="pro-audio-actions">
     <button type="button" data-pro="prev">⏮</button>
@@ -1068,7 +1134,7 @@ window.toggleAudio = togglePlay;
 window.nextTrack = next;
 window.prevTrack = prev;
 window.stopAudio = stop;
-window.startApp = function(play){ document.getElementById('splash')?.classList.add('hide'); if(play) playTrack(0); };
+window.startApp = function(){ /* تم إلغاء الشاشة الترحيبية */ };
 document.querySelectorAll('button, a').forEach(el=>{
   const t=(el.textContent||'').trim();
   if(t.includes('تشغيل دعاء السفر')) el.addEventListener('click',()=>playTrack(0));
@@ -1081,17 +1147,66 @@ setTrack(0);
 </script>
 
 
-
 <script id="top-button-final-fix">
 (function(){
-  window.goTop = function(){
-    try {
-      window.scrollTo({top:0, left:0, behavior:'smooth'});
-    } catch(e) {
+  function goTop(){
+    try{
+      window.scrollTo({top:0,left:0,behavior:'smooth'});
+    }catch(e){
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
     }
+  }
+  window.goTop = goTop;
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('button, a');
+    if(!el) return;
+    var txt = (el.textContent || '').trim();
+    var action = el.getAttribute('data-action') || el.getAttribute('data-pro') || '';
+    var href = el.getAttribute('href') || '';
+    if(txt.includes('أعلى') || action === 'top' || href === '#top'){
+      e.preventDefault();
+      goTop();
+    }
+  }, true);
+})();
+</script>
+
+
+<button type="button" class="pro-top-button" onclick="goTop()" aria-label="العودة إلى أعلى الصفحة">⬆️ أعلى</button>
+<style id="pro-top-button-style">
+.pro-top-button{
+  position:fixed;left:18px;bottom:168px;z-index:1100;
+  border:0;border-radius:999px;padding:12px 16px;
+  background:linear-gradient(135deg,#7b1230,#07172b);color:#fff;
+  font-family:Cairo,Tajawal,sans-serif;font-weight:900;
+  box-shadow:0 14px 36px rgba(0,0,0,.25);cursor:pointer
+}
+.pro-top-button:hover{transform:translateY(-2px)}
+@media print{.pro-top-button{display:none!important}}
+</style>
+
+
+<script id="golden-map-route-fix">
+(function(){
+  const originalShowRoute = window.showRoute;
+  window.showRoute = function(id, btn){
+    if (typeof originalShowRoute === 'function') {
+      originalShowRoute(id, btn);
+    } else {
+      document.querySelectorAll('.route-card').forEach(x=>x.classList.remove('active'));
+      const target = document.getElementById('route-' + id);
+      if(target) target.classList.add('active');
+      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      if(btn) btn.classList.add('active');
+    }
+    const panel = document.getElementById('goldenMapPanel');
+    if(panel) panel.style.display = (id === 'golden65') ? 'block' : 'none';
   };
+  document.addEventListener('DOMContentLoaded', function(){
+    const panel = document.getElementById('goldenMapPanel');
+    if(panel) panel.style.display = document.getElementById('route-golden65')?.classList.contains('active') ? 'block' : 'none';
+  });
 })();
 </script>
 
